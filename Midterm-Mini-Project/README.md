@@ -75,7 +75,7 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 - 本機離線檢查：App 可載入、API 預設關閉、有效文字不產生 AI 結果、空白輸入會被擋下。
 - 6001 字元輸入：2026-11-10 本機測試顯示超長提示，且不默默截斷。當時 API 開關開啟；程式會先檢查長度再呼叫 API，因此預期未送出請求。
 - 本機資訊不足案例：2026-11-10 的畫面顯示真實 API 格式檢查通過；使用者提供的結果含活動名稱「新生交流場」、時間「下週五晚上」，並將地點及報名截止標示為未提及。
-- Cloud 正常公告案例：2026-11-10 使用者提供 Streamlit Cloud 頁面的原文與實際顯示結果；欄位已逐項核對，報名表網址／取得方式與 Instagram 帳號未在原文出現，列為缺漏合理。使用者確認 Cloud `OPENAI_MODEL` 設定為 `gpt-5.4-mini`。使用者未說明本筆結果前實際提交幾次；若只提交一次，依 App 流程即為 1 次 API 請求。
+- Cloud 正常公告案例：2026-11-10 使用者提供 Streamlit Cloud 頁面的原文與實際顯示結果；欄位已逐項核對，報名表網址／取得方式與 Instagram 帳號未在原文出現，列為缺漏合理。使用者確認 Cloud `OPENAI_MODEL` 設定為 `gpt-5.4-mini`，且本筆測試前送出 3 次以上。依 App 流程，每次有效提交最多呼叫一次 API；實際 API 請求數未以用量頁核實。
 
 ### 尚待完成或確認
 
@@ -91,7 +91,7 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 | Streamlit App 網址 | [開啟 Cloud App](https://1151genai-app-development1-bcvdgkbmmfzj88hdfbhx9c.streamlit.app/)；此網址來自使用者提供的 Cloud 結果頁面，老師觀看權限仍待確認 |
 | Repo／分支／Main file path | `115_1_GenAI-App-Development1`／`main`／`Midterm-Mini-Project/app.py` |
 | Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功、Cloud Secrets 已由使用者設定；本工作階段未登入而無法存取，老師觀看權限待確認 |
-| 雲端真實 API 成功日期與結果 | 2026-11-10；使用者提供 Cloud 實際結果及原文，逐欄核對完成；模型 `gpt-5.4-mini`（依使用者確認的 Cloud Secrets）；實際提交次數未確認（若只提交一次則為 1 次 API 請求） |
+| 雲端真實 API 成功日期與結果 | 2026-11-10；使用者提供 Cloud 實際結果及原文，逐欄核對完成；模型 `gpt-5.4-mini`（依使用者確認的 Cloud Secrets）；本筆測試前送出 3 次以上，依 App 流程最多各呼叫 1 次 API；實際 API 請求數未以用量頁核實 |
 
 ### Streamlit Cloud Secrets 設定
 
