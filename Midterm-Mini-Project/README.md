@@ -51,6 +51,10 @@ OPENAI_MODEL=gpt-5.4-mini
 
 套件直接依賴版本：OpenAI 2.49.0、Streamlit 1.63.0、python-dotenv 1.2.3、Pydantic 2.14.1。若 Python 或套件版本不同，請在測試紀錄中填寫實際版本。金鑰亦可依 `.streamlit/secrets.example.toml` 設定在 Streamlit Community Cloud 的 App Secrets。
 
+## Cloud 套件設定
+
+Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py`；套件請使用 Repo 根目錄的 `requirements.txt`（已包含本 App 所需的 Pydantic）。根目錄清單直接列出安裝套件，不要把其他 requirements 檔案路徑寫成套件名稱。專案資料夾內的 `requirements.txt` 保留供本機在此資料夾安裝使用。
+
 ## 操作方式
 
 1. 啟動後先保持「啟用真實 API」關閉，貼上虛構公告並送出；畫面只會做輸入與設計檢查，不會產生模型結果。
@@ -77,18 +81,18 @@ OPENAI_MODEL=gpt-5.4-mini
 - 資訊不足案例的原文、模型名稱、確切請求數及完整逐欄核對；結果中的「回覆是否出席」須確認是否有原文根據。
 - 畫面曾出現 `NotFoundError: removeChild`；重整後是否重現尚未確認，不能僅憑截圖判定根因。
 - 正常公告真實 API 測試尚未確認。
-- Streamlit Community Cloud 尚未部署。部署必做；完成後須記錄 App 網址、Repo／分支／入口、Cloud Python 版本、驗收日期、老師觀看權限及雲端真實 API 成功結果。
+- Streamlit Community Cloud：**2026-11-10 部署安裝失敗**。Logs 顯示 pip 將子資料夾 requirements 路徑當成套件需求而解析錯誤；已將資料夾改名為 `Midterm-Mini-Project`，並由 Repo 根目錄 `requirements.txt` 明列 App 依賴。待 Commit／Push、更新 Cloud Main file path 後重新部署確認。先前亦曾見瀏覽器端 `NotFoundError: removeChild`，目前尚未確認其是否仍會發生。
 
 詳細狀態與測試證據請看[專題設計與驗收紀錄](./第08週_課堂簡化版_專題設計與驗收紀錄.md)。
 
 | Cloud 驗收項目 | 狀態 |
 |---|---|
-| Streamlit App 網址 | 未部署 |
-| Repo／分支／Main file path | 待部署填寫；入口 `Midterm Mini-Project/app.py` |
-| Cloud Python 版本／老師可否開啟 | 未測 |
+| Streamlit App 網址 | 已建立，但依賴安裝失敗；修復並重新部署驗收後填入 |
+| Repo／分支／Main file path | Repo／分支待補；入口 `Midterm-Mini-Project/app.py` |
+| Cloud Python 版本／老師可否開啟 | Logs 顯示 Python 3.14.10；App 尚未啟動，老師可否開啟待驗 |
 | 雲端真實 API 成功日期與結果 | 未測；部署後填入實際虛構輸入、輸出及逐欄核對結果 |
 
-部署入口為 `Midterm Mini-Project/app.py`，requirements 在入口同層。部署前請確認此資料夾已推送到 GitHub，並在 Streamlit Community Cloud 選擇正確 Repo、分支及 Main file path；平台可用的 Python 版本與安裝結果須實際確認。不要提交 `.env`、`.streamlit/secrets.toml`、虛擬環境或金鑰。
+部署入口為 `Midterm-Mini-Project/app.py`；Cloud 使用 Repo 根目錄的 `requirements.txt`。部署前請確認 App 與根目錄套件清單都已推送到 GitHub，並在 Streamlit Community Cloud 選擇正確 Repo、分支及 Main file path；平台可用的 Python 版本與安裝結果須實際確認。不要提交 `.env`、`.streamlit/secrets.toml`、虛擬環境或金鑰。
 
 ## 限制與後續
 

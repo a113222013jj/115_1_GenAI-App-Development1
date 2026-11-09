@@ -1,4 +1,5 @@
-# Windows／Python3.14.0獨立環境已驗證；2026-10-23。
+# Repo根目錄安裝清單；Cloud部署Midterm-Mini-Project/app.py時使用此檔。
 streamlit==1.63.0
 openai==2.49.0
 python-dotenv==1.2.3
+pydantic==2.14.1
