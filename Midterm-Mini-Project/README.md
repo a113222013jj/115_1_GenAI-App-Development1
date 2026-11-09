@@ -79,20 +79,31 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 ### 尚待完成或確認
 
 - 資訊不足案例的原文、模型名稱、確切請求數及完整逐欄核對；結果中的「回覆是否出席」須確認是否有原文根據。
-- 畫面曾出現 `NotFoundError: removeChild`；重整後是否重現尚未確認，不能僅憑截圖判定根因。
+- 部署前曾出現 `NotFoundError: removeChild`；重新部署後是否重現尚未確認，不能僅憑舊截圖判定根因。
 - 正常公告真實 API 測試尚未確認。
-- Streamlit Community Cloud：**2026-11-10 部署安裝失敗**。Logs 顯示 pip 將子資料夾 requirements 路徑當成套件需求而解析錯誤；已將資料夾改名為 `Midterm-Mini-Project`，並由 Repo 根目錄 `requirements.txt` 明列 App 依賴。待 Commit／Push、更新 Cloud Main file path 後重新部署確認。先前亦曾見瀏覽器端 `NotFoundError: removeChild`，目前尚未確認其是否仍會發生。
+- Streamlit Community Cloud：**使用者回報重新部署已成功**。請確認 Cloud App 可正常操作，並完成真實 API 雲端驗收。
 
 詳細狀態與測試證據請看[專題設計與驗收紀錄](./第08週_課堂簡化版_專題設計與驗收紀錄.md)。
 
 | Cloud 驗收項目 | 狀態 |
 |---|---|
-| Streamlit App 網址 | 已建立，但依賴安裝失敗；修復並重新部署驗收後填入 |
-| Repo／分支／Main file path | Repo／分支待補；入口 `Midterm-Mini-Project/app.py` |
-| Cloud Python 版本／老師可否開啟 | Logs 顯示 Python 3.14.10；App 尚未啟動，老師可否開啟待驗 |
+| Streamlit App 網址 | 待貼入實際 Cloud App 網址 |
+| Repo／分支／Main file path | `115_1_GenAI-App-Development1`／`main`／`Midterm-Mini-Project/app.py` |
+| Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功由使用者回報，老師觀看權限待確認 |
 | 雲端真實 API 成功日期與結果 | 未測；部署後填入實際虛構輸入、輸出及逐欄核對結果 |
 
-部署入口為 `Midterm-Mini-Project/app.py`；Cloud 使用 Repo 根目錄的 `requirements.txt`。部署前請確認 App 與根目錄套件清單都已推送到 GitHub，並在 Streamlit Community Cloud 選擇正確 Repo、分支及 Main file path；平台可用的 Python 版本與安裝結果須實際確認。不要提交 `.env`、`.streamlit/secrets.toml`、虛擬環境或金鑰。
+### Streamlit Cloud Secrets 設定
+
+在 Streamlit Community Cloud 開啟此 App 的 **Manage app／Settings → Secrets**，依 `.streamlit/secrets.example.toml` 格式填入下列設定，將佔位文字替換成自己的金鑰；金鑰只貼在 Cloud Secrets 欄位，不要貼到聊天、程式碼或 GitHub：
+
+```toml
+OPENAI_API_KEY = "在 Cloud Secrets 欄位貼上自己的金鑰"
+OPENAI_MODEL = "gpt-5.4-mini"
+```
+
+按 Save 後等待 App 重啟。回到 App 先確認畫面可正常操作；只有準備好進行一次真實測試時才開啟 API。若已設定 Secrets，不要為了確認而反覆送出 API 請求。
+
+部署入口為 `Midterm-Mini-Project/app.py`；Cloud 使用 Repo 根目錄的 `requirements.txt`。不要在 GitHub 提交 `.env`、`.streamlit/secrets.toml`、虛擬環境或金鑰。
 
 ## 限制與後續
 
