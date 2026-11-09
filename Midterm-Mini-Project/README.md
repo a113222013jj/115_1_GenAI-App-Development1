@@ -89,15 +89,15 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 |---|---|
 | Streamlit App 網址 | 待貼入實際 Cloud App 網址 |
 | Repo／分支／Main file path | `115_1_GenAI-App-Development1`／`main`／`Midterm-Mini-Project/app.py` |
-| Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功由使用者回報，老師觀看權限待確認 |
+| Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功、Cloud Secrets 已由使用者設定；老師觀看權限待確認 |
 | 雲端真實 API 成功日期與結果 | 未測；部署後填入實際虛構輸入、輸出及逐欄核對結果 |
 
 ### Streamlit Cloud Secrets 設定
 
-在 Streamlit Community Cloud 開啟此 App 的 **Manage app／Settings → Secrets**，依 `.streamlit/secrets.example.toml` 格式填入下列設定，將佔位文字替換成自己的金鑰；金鑰只貼在 Cloud Secrets 欄位，不要貼到聊天、程式碼或 GitHub：
+Cloud Secrets 已由使用者設定；金鑰值不記錄於文件、程式碼或 GitHub。若日後需檢查設定，於 Streamlit Community Cloud 開啟此 App 的 **Manage app／Settings → Secrets**，依 `.streamlit/secrets.example.toml` 確認 `OPENAI_API_KEY` 與 `OPENAI_MODEL` 存在即可；不要複製或分享金鑰：
 
 ```toml
-OPENAI_API_KEY = "在 Cloud Secrets 欄位貼上自己的金鑰"
+OPENAI_API_KEY = "your-key"
 OPENAI_MODEL = "gpt-5.4-mini"
 ```
 
