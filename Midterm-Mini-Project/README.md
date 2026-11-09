@@ -75,12 +75,12 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 - 本機離線檢查：App 可載入、API 預設關閉、有效文字不產生 AI 結果、空白輸入會被擋下。
 - 6001 字元輸入：2026-11-10 本機測試顯示超長提示，且不默默截斷。當時 API 開關開啟；程式會先檢查長度再呼叫 API，因此預期未送出請求。
 - 本機資訊不足案例：2026-11-10 的畫面顯示真實 API 格式檢查通過；使用者提供的結果含活動名稱「新生交流場」、時間「下週五晚上」，並將地點及報名截止標示為未提及。
-- 正常公告案例：使用者於 2026-11-10 提供公告原文及其結構化結果；欄位已逐項核對，報名表網址／取得方式與 Instagram 帳號未在原文出現，列為缺漏合理。目前本機 `.env` 設定模型為 `gpt-5.4-mini`，但無法證明這筆歷史結果是在本機或使用此模型產生；實際環境與請求數未留下紀錄。
+- Cloud 正常公告案例：2026-11-10 使用者提供 Streamlit Cloud 頁面的原文與實際顯示結果；欄位已逐項核對，報名表網址／取得方式與 Instagram 帳號未在原文出現，列為缺漏合理。使用者未說明本筆結果前實際提交幾次；若只提交一次，依 App 流程即為 1 次 API 請求。Cloud 實際模型尚未確認。
 
 ### 尚待完成或確認
 
 - 資訊不足案例的原文、模型名稱、確切請求數及完整逐欄核對；結果中的「回覆是否出席」須確認是否有原文根據。
-- 正常公告的測試環境及請求數未提供；目前本機模型設定為 `gpt-5.4-mini`，但不能據此追認歷史測試所用模型。日期星期檢查顯示：2025 年 10 月 15 日為星期三、10 月 12 日為星期日，符合公告所列星期；2026 年則分別是星期四與星期一。若「115學年度第一學期」指 2026 年秋季，公告的星期與學年度不一致，年份需向公告來源確認。
+- Cloud 正常公告結果已由使用者提供；Cloud 實際模型名稱及老師觀看權限待確認。日期星期檢查顯示：2025 年 10 月 15 日為星期三、10 月 12 日為星期日，符合公告所列星期；2026 年則分別是星期四與星期一。若「115學年度第一學期」指 2026 年秋季，公告的星期與學年度不一致，年份需向公告來源確認。
 - 部署前曾出現 `NotFoundError: removeChild`；重新部署後是否重現尚未確認，不能僅憑舊截圖判定根因。
 - Streamlit Community Cloud：使用者回報重新部署成功且已設定 Secrets。由本工作階段開啟截圖中的網址時，Streamlit 顯示「You do not have access to this app or it does not exist」並導向登入／not found 頁；這不能判定 App 是否對已登入的使用者可用。需由你的 Cloud 帳號及老師帳號確認存取，並完成真實 API 雲端驗收。
 
@@ -88,10 +88,10 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 
 | Cloud 驗收項目 | 狀態 |
 |---|---|
-| Streamlit App 網址 | [開啟 Cloud App](https://1151genai-app-development1-zuq7prlqetukvrs9rtklmu.streamlit.app/)；網址取自使用者截圖，需由已登入帳號確認 |
+| Streamlit App 網址 | [開啟 Cloud App](https://1151genai-app-development1-bcvdgkbmmfzj88hdfbhx9c.streamlit.app/)；此網址來自使用者提供的 Cloud 結果頁面，老師觀看權限仍待確認 |
 | Repo／分支／Main file path | `115_1_GenAI-App-Development1`／`main`／`Midterm-Mini-Project/app.py` |
 | Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功、Cloud Secrets 已由使用者設定；本工作階段未登入而無法存取，老師觀看權限待確認 |
-| 雲端真實 API 成功日期與結果 | 未測；部署後填入實際虛構輸入、輸出及逐欄核對結果 |
+| 雲端真實 API 成功日期與結果 | 2026-11-10；使用者提供 Cloud 實際結果及原文，逐欄核對完成；實際提交次數未確認（若只提交一次則為 1 次 API 請求）；Cloud 模型名稱待確認 |
 
 ### Streamlit Cloud Secrets 設定
 
