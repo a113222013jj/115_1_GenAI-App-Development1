@@ -81,15 +81,15 @@ Streamlit Community Cloud 的 Main file path 使用 `Midterm-Mini-Project/app.py
 - 資訊不足案例的原文、模型名稱、確切請求數及完整逐欄核對；結果中的「回覆是否出席」須確認是否有原文根據。
 - 部署前曾出現 `NotFoundError: removeChild`；重新部署後是否重現尚未確認，不能僅憑舊截圖判定根因。
 - 正常公告真實 API 測試尚未確認。
-- Streamlit Community Cloud：**使用者回報重新部署已成功**。請確認 Cloud App 可正常操作，並完成真實 API 雲端驗收。
+- Streamlit Community Cloud：使用者回報重新部署成功且已設定 Secrets。由本工作階段開啟截圖中的網址時，Streamlit 顯示「You do not have access to this app or it does not exist」並導向登入／not found 頁；這不能判定 App 是否對已登入的使用者可用。需由你的 Cloud 帳號及老師帳號確認存取，並完成真實 API 雲端驗收。
 
 詳細狀態與測試證據請看[專題設計與驗收紀錄](./第08週_課堂簡化版_專題設計與驗收紀錄.md)。
 
 | Cloud 驗收項目 | 狀態 |
 |---|---|
-| Streamlit App 網址 | 待貼入實際 Cloud App 網址 |
+| Streamlit App 網址 | [開啟 Cloud App](https://1151genai-app-development1-zuq7prlqetukvrs9rtklmu.streamlit.app/)；網址取自使用者截圖，需由已登入帳號確認 |
 | Repo／分支／Main file path | `115_1_GenAI-App-Development1`／`main`／`Midterm-Mini-Project/app.py` |
-| Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功、Cloud Secrets 已由使用者設定；老師觀看權限待確認 |
+| Cloud Python 版本／老師可否開啟 | Python 3.14.10；重新部署成功、Cloud Secrets 已由使用者設定；本工作階段未登入而無法存取，老師觀看權限待確認 |
 | 雲端真實 API 成功日期與結果 | 未測；部署後填入實際虛構輸入、輸出及逐欄核對結果 |
 
 ### Streamlit Cloud Secrets 設定
